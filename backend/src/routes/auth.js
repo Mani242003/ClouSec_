@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
 const isAdmin = (req, res, next) => {
   const { email, password } = req.headers;
   
-  console.log('Auth check headers:', { email, password });
+  // console.log('Auth check headers:', { email, password });
   
   if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
     console.log('Auth successful');
