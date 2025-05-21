@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NodeViewWrapper, NodeViewProps } from '@tiptap/react';
 import { FiCopy, FiCheck } from 'react-icons/fi';
 
 const CodeBlockWithCopy: React.FC<NodeViewProps> = ({
   node,
-  getPos,
-  editor,
+ 
 }) => {
   const [copied, setCopied] = useState(false);
   

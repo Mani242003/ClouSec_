@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { CaseStudy, createCaseStudy, updateCaseStudy, fetchCaseStudyById } from '../../services/api';
+import {  createCaseStudy, updateCaseStudy, fetchCaseStudyById } from '../../services/api';
 import { Helmet } from 'react-helmet';
 
 const SimpleCaseStudyForm: React.FC = () => {
@@ -25,9 +25,9 @@ const SimpleCaseStudyForm: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [initialLoading, setInitialLoading] = useState<boolean>(isEditMode);
-  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [, setImageFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const [pdfFile, setPdfFile] = useState<File | null>(null);
+  const [, setPdfFile] = useState<File | null>(null);
   const [pdfFileName, setPdfFileName] = useState<string | null>(null);
   const [pdfDataUrl, setPdfDataUrl] = useState<string | null>(null);
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link} from 'react-router-dom';
 import { Blog, Comment, fetchBlogById, fetchBlogs, fetchCommentsByBlogId, createComment, getAdminCredentials } from '../../services/api';
 import { formatDate } from '../../utils/dateFormatter';
 import Footer from '../Layout/Footer';

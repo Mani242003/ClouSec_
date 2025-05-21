@@ -13,7 +13,7 @@ const DocumentLinkHandler: React.FC<DocumentLinkHandlerProps> = ({ onNavigateToD
       // Check if the clicked element is an anchor tag
       if (target.tagName === 'A' || target.closest('a')) {
         const link = target.tagName === 'A' ? target : target.closest('a');
-        const href = link?.getAttribute('href');
+        // const href = link?.getAttribute('href');
         
         // If it's a document link (internal link with doc-id attribute)
         if (link?.hasAttribute('data-doc-id')) {

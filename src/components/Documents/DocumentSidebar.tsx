@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchDocumentTree, Document, createDocument, deleteDocument } from '../../services/documentApi';
-import { FiFolder, FiFile, FiChevronRight, FiChevronDown, FiPlus, FiTrash, FiEdit } from 'react-icons/fi';
+import { FiFolder, FiFile, FiChevronRight, FiChevronDown, FiPlus, FiTrash } from 'react-icons/fi';
 import { getAdminCredentials } from '../../services/api';
 import AlertMessage from './AlertMessage';
 

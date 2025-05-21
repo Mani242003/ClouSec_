@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Blog, createBlog, updateBlog, fetchBlogById } from '../../services/api';
+import {  createBlog, updateBlog, fetchBlogById } from '../../services/api';
 
 // You might want to add a rich text editor like TinyMCE, CKEditor, or Quill
 // For simplicity, we're using a textarea in this example
@@ -24,7 +24,7 @@ const BlogForm: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [initialLoading, setInitialLoading] = useState<boolean>(isEditMode);
-  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [, setImageFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [showHtmlHelp, setShowHtmlHelp] = useState<boolean>(false);
 

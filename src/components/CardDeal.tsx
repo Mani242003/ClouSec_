@@ -1,5 +1,4 @@
 import React from "react";
-import card from "/sam-sol-2.webp";
 import GradientLinkButton from "./common/GradientLinkButtonProps";
 
 const CardDeal: React.FC = () => {

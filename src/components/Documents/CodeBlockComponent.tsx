@@ -4,8 +4,7 @@ import { FiCopy, FiCheck } from 'react-icons/fi';
 
 const CodeBlockComponent: React.FC<NodeViewProps> = ({
   node,
-  updateAttributes,
-  extension,
+
 }) => {
   const [copied, setCopied] = useState(false);
 

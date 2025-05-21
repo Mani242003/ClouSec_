@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { useEditor, EditorContent, ReactNodeViewRenderer } from '@tiptap/react';
+import React, { useEffect, useState, } from 'react';
+import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
 import Link from '@tiptap/extension-link';
@@ -8,6 +8,7 @@ import TableRow from '@tiptap/extension-table-row';
 import TableCell from '@tiptap/extension-table-cell';
 import TableHeader from '@tiptap/extension-table-header';
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
+import TextAlign from '@tiptap/extension-text-align';
 import { common, createLowlight } from 'lowlight';
 import { FiBold, FiItalic, FiList, FiLink, FiImage, FiAlignLeft, FiAlignCenter, FiAlignRight, FiTable, FiCode } from 'react-icons/fi';
 import { fetchDocumentTree, Document } from '../../services/documentApi';
@@ -56,7 +57,7 @@ const addCopyButtonToCodeBlocks = () => {
 };
 
 // Process links to add data-doc-id attribute for internal document links
-const processDocumentLinks = (documentTree: Document[], currentDocumentId: number) => {
+const processDocumentLinks = (documentTree: Document[]) => {
   // Flatten the document tree for easier searching
   const flattenDocumentTree = (docs: Document[], result: Document[] = []): Document[] => {
     docs.forEach(doc => {
@@ -165,7 +166,7 @@ const EnhancedTipTapEditor: React.FC<EnhancedTipTapEditorProps> = ({
           const tree = await fetchDocumentTree();
           // Use a small delay to ensure the DOM is fully rendered
           setTimeout(() => {
-            processDocumentLinks(tree, documentId);
+            processDocumentLinks(tree);
           }, 100);
         } catch (err) {
           console.error('Failed to load document tree for processing links:', err);
@@ -213,6 +214,9 @@ const EnhancedTipTapEditor: React.FC<EnhancedTipTapEditorProps> = ({
       TableRow,
       TableCell,
       TableHeader,
+      TextAlign.configure({
+        types: ['heading', 'paragraph'],
+      }),
     ],
     content: content,
     editable: !readOnly,

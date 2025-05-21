@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { fetchBlogs, deleteBlog, fetchCaseStudies, deleteCaseStudy } from '../services/api';
 import { FiEdit, FiTrash, FiPlus, FiBook, FiFileText, FiFolder } from 'react-icons/fi';
 import { Helmet } from 'react-helmet';
