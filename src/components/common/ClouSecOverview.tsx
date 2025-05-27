@@ -27,7 +27,7 @@ const sections: Section[] = [
         title: "Scattered Security Insights",
         content:
           "Traditional solutions pull security data from various AWS services without true consolidation, making it difficult to analyze and remediate threats effectively.",
-        img: "/sam-sol-1.webp",
+        img: "/sol_img_1.jpg",
         list: [
           {
             title: "Unified Security Dashboard",
@@ -45,7 +45,7 @@ const sections: Section[] = [
         title: "Alert Fatigue & Overwhelming Security Findings",
         content:
           "Security teams face an onslaught of unprioritized alerts, leading to high volumes of noise and significant alert fatigue.",
-        img: "/sam-sol-2.webp",
+        img: "/sol_img_2.jpg",
         list: [
           {
             title: "Intelligent Prioritization",
@@ -63,7 +63,7 @@ const sections: Section[] = [
         title: "Lack of Day-One Compliance",
         content:
           "Meeting compliance standards across multiple frameworks is challenging.",
-        img: "/sam-sol-2.webp",
+        img: "/sol_img_3.jpg",
         list: [
           {
             title: "Built-In Compliance Rules",
@@ -86,7 +86,7 @@ const sections: Section[] = [
         title: "Manual, Time-Consuming Remediation",
         content:
           "Current CSPM tools often overwhelm teams with findings but lack intelligent remediation, leading to manual task assignment and increased vulnerability.",
-        img: "/ai-auto-1.webp",
+        img: "/sol_img_4.jpg",
         list: [
           {
             title: "AI-Powered Automated Remediation",
@@ -104,7 +104,7 @@ const sections: Section[] = [
         title: "Cross-Team Collaboration Challenges",
         content:
           "Security incidents often require input from multiple teams, causing delays, inefficient workflows, and communication breakdowns.",
-        img: "/ai-auto-2.webp",
+        img: "/sol_img_5.jpg",
         list: [
           {
             title: "Automated Security Workflows",
@@ -127,7 +127,7 @@ const sections: Section[] = [
         title: "User Access Governance Gaps",
         content:
           "Limited cross-account visibility in traditional CSPM tools leads to blind spots in access control and compliance.",
-        img: "/governance-1.webp",
+        img: "/sol_img_6.jpg",
         list: [
           {
             title: "Granular Governance",
@@ -145,7 +145,7 @@ const sections: Section[] = [
         title: "Inefficient Cost Management & Idle Resources",
         content:
           "Organizations often leave unused resources running, causing overspending across cloud environments.",
-        img: "/governance-2.webp",
+        img: "/sol_img_7.jpg",
         list: [
           {
             title: "AI-Driven Rightsizing Recommendations",
@@ -168,7 +168,7 @@ const sections: Section[] = [
         title: "API Security",
         content:
           "APIs are common targets but often lack real-time visibility in traditional tools.",
-        img: "/governance-3.webp",
+        img: "/sol_img_8.jpg",
         list: [
           {
             title: "Holistic API Monitoring",
@@ -191,7 +191,7 @@ const sections: Section[] = [
         title: "Lack of Executive-Level Visibility",
         content:
           "Fragmented data across platforms makes it difficult for executives to understand cloud security and compliance posture.",
-        img: "/insight-flex-1.webp",
+        img: "/sol_img_9.jpg",
         list: [
           {
             title: "Comprehensive Dashboards",
@@ -209,7 +209,7 @@ const sections: Section[] = [
         title: "Deployment & Pricing Hurdles",
         content:
           "Agent-heavy, SaaS-based models complicate deployment and scale poorly with growing cloud footprints.",
-        img: "/insight-flex-2.webp",
+        img: "/sol_img_10.jpg",
         list: [
           {
             title: "Flexible Deployment Options",
@@ -227,7 +227,7 @@ const sections: Section[] = [
         title: "Streamlined Ticketing & Incident Resolution",
         content:
           "Disparate teams managing incidents can result in confusion, slow response, and unresolved issues.",
-        img: "/insight-flex-3.webp",
+        img: "/sol_img_11.jpg",
         list: [
           {
             title: "Customized Ticketing Workflow",
@@ -356,27 +356,27 @@ const ClouSecOverview: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-10 bg-gray-50 space-y-10 bg-gradient-to-br from-indigo-700 to-purple-700 text-white">
-      <header className="text-center">
-        <h1 className="text-3xl font-bold text-white">
+    <div className="max-w-7xl mx-auto  py-10 bg-white space-y-10 ">
+      <header className="text-center px-6">
+        <h1 className="text-3xl font-bold text-gray-900">
           The RegTech Solution for Secure & Compliant Cloud Operations
         </h1>
-        <p className="text-lg text-white mt-2">
+        <p className="text-lg text-gray-900 mt-2">
           Sleep Soundly Knowing Your Cloud is Secure: The Power of ClouSec
         </p>
-        <p className="text-[16px] text-white  mt-4  mx-auto">
+        <p className="text-[16px] text-gray-800  mt-4  mx-auto">
           In highly regulated industries like banking, fintech, e-commerce and insurance, cloud security is no longer just an IT concern – it's a business imperative. Data breaches can lead to crippling fines, reputational damage, and a loss of customer trust. Modern cloud environments are complex, with security insights often scattered across multiple services – leading to missed threats, slow response times, and growing costs. ClouSec changes the game by consolidating and correlating security data in one unified platform, powered by AI-driven automation.
         </p>
       </header>
 
       {/* Section Tabs */}
-      <div className="flex flex-wrap justify-center gap-4 border-b border-gray-300 pb-4">
+      <div  ref={contentRef} className=" flex flex-wrap justify-center gap-4 ">
         {sections.map((section, index) => (
           <button
             key={index}
             className={`px-4 py-2 text-sm rounded-lg font-medium ${
               activeSection === index
-                ? "border-2 text-white"
+                ?  "border-b-2 border-gray-800 text-gray-800"
                 : "bg-white text-black_"
             }`}
             onClick={() => handleTabClick(index)}
@@ -387,7 +387,8 @@ const ClouSecOverview: React.FC = () => {
       </div>
 
       {/* Nested Content Tabs */}
-      <div className="flex flex-wrap gap-2 mb-6">
+    <div  className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white  px-2 sm:pl-4 rounded-[0px] sm:rounded-[10px] shadow-md m-0 sm:m-6">
+        <div className="flex flex-wrap gap-2 mb-0 sm:mb-6  ">
         {currentTabs.map((tab, idx) => (
           <button
             key={idx}
@@ -396,10 +397,10 @@ const ClouSecOverview: React.FC = () => {
               setOpenIndex(null);
               contentRef.current?.scrollIntoView({ behavior: "smooth" });
             }}
-            className={`px-3 py-1 rounded-md text-sm font-medium ${
+            className={`p-3 sm:p-6 rounded-md text-sm font-medium text-start ${
               activeTab === idx
-                ? "border-2 text-white"
-                : "bg-white text-black_"
+               ? "border-b-2 border-white text-white"
+                : ""
             }`}
           >
             {tab.title}
@@ -409,30 +410,30 @@ const ClouSecOverview: React.FC = () => {
 
       {/* Active Tab Content */}
       <div
-        ref={contentRef}
-        className="flex flex-col lg:flex-row gap-6 bg-white rounded-xl shadow-sm p-6"
+       
+        className="flex flex-col lg:flex-row gap-0 sm:gap-6 rounded-xl shadow-sm p-4 sm:p-6"
       >
-        <div className="w-full lg:w-1/2 flex items-center justify-center">
+        <div className="w-full lg:w-1/2 flex items-center justify-center ">
           <AspectRatioBox ratio="4:3">
             <OptimizedImage
               src={currentContent.img}
               alt={currentContent.title}
               width={600}
               height={450}
-              className="rounded-lg"
+              className="rounded-lg shadow-none"
             />
           </AspectRatioBox>
         </div>
 
         <div className="w-full lg:w-1/2 space-y-6">
           <div>
-            <span className="uppercase text-primary text-sm font-semibold">
+            <span className="uppercase  text-sm font-semibold">
               Challenge
             </span>
-            <h2 className="text-2xl font-bold text-gray-800 mt-1">
+            <h2 className="text-2xl font-bold  mt-1">
               {currentContent.title}
             </h2>
-            <p className="text-gray-600 mt-2">{currentContent.content}</p>
+            <p className=" mt-2">{currentContent.content}</p>
           </div>
 
           <div>
@@ -468,6 +469,8 @@ const ClouSecOverview: React.FC = () => {
           </div>
         </div>
       </div>
+      
+    </div>
     </div>
   );
 };

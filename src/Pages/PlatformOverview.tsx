@@ -24,7 +24,7 @@ const PlatformOverview: React.FC = () => {
 
 
 <div
-  className="DevOpsMainHeader pt-[60px]    flex items-center justify-center text-white px-8 "
+  className="DevOpsMainHeader pt-[80px] flex items-center justify-center text-white px-4 md:px-8"
   style={{
     backgroundImage: `url(${a})`,
     backgroundSize: "cover",
@@ -35,69 +35,77 @@ const PlatformOverview: React.FC = () => {
   role="banner"
   aria-label="Platform Overview Banner"
 >
-  <div className="flex w-full max-w-7xl p-[3rem] items-center justify-between gap-10 flex-wrap lg:flex-nowrap">
+  <div className="flex w-full max-w-7xl py-12 px-4 md:px-8 items-center justify-between gap-10 flex-col lg:flex-row">
     {/* Left: Title and Description */}
-    <div className="flex  flex-col max-w-xl p-[1rem]">
-      <h1 className=" font-semibold leading-[3rem]  tracking-wide drop-shadow-lg text-white/90 mb-8 font-Grotesk text-[55px]">
-      Where Cloud Security Meets Intelligence
+    <div className="flex flex-col max-w-2xl text-left">
+      <h1 className="font-semibold leading-tight tracking-wide drop-shadow-lg text-white/90 mb-6 font-Grotesk text-3xl sm:text-4xl md:text-5xl lg:text-[55px]">
+        Where Cloud Security Meets Intelligence
       </h1>
-      <p className="text-lg text-white/80">
-      Cloud security is complex. Budgets are stretched. Threats are evolving. ClouSec simplifies the challenges of securing your cloud environment. We offer an AI- powered platform that provides complete visibility, intelligent automation, enforce best practices and continuous compliance, allowing you to focus on innovation, not just security.
+      <p className="text-base sm:text-lg text-white/80">
+        Cloud security is complex. Budgets are stretched. Threats are evolving. ClouSec simplifies the challenges of securing your cloud environment. We offer an AI-powered platform that provides complete visibility, intelligent automation, enforce best practices and continuous compliance, allowing you to focus on innovation, not just security.
       </p>
-      <GradientLinkButton className="mt-[1.5rem] w-[9rem]" path="/book-demo">
+      <GradientLinkButton className="mt-6 w-fit sm:w-[9rem]" path="/book-demo">
         Get a Demo
       </GradientLinkButton>
     </div>
 
     {/* Right: ReactPlayer YouTube Video */}
-    <div className="w-full max-w-md aspect-video">
-    <iframe width="510" height="320" src="https://www.youtube.com/embed/-vLYTijz370" title="ClouSec(AWS - CSPM tool) misconfigurations, vulnerabilities, threats, cloud asset mgt, AWS health." frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-      </div>
+    <div className="hidden sm:flex w-full max-w-md aspect-video">
+      <iframe
+        className="w-full h-full rounded-lg shadow-lg"
+        src="https://www.youtube.com/embed/-vLYTijz370"
+        title="ClouSec(AWS - CSPM tool) misconfigurations, vulnerabilities, threats, cloud asset mgt, AWS health."
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      ></iframe>
+    </div>
   </div>
 </div>
 
+
       {/*Security and complaince  */}
 <section className="bg-gray-50 py-16">
-  <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center gap-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex flex-col md:flex-row items-center md:items-start gap-12">
     
     {/* Left Content */}
-    <div className="flex-1">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-        <span className="font-Grotesk text-[55px] text-black_ bg-clip-text bg-gradient-to-r from-primary to-purple-600">
+    <div className="flex-1 text-start md:text-left">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+        <span className="font-Grotesk text-[36px] sm:text-[48px] md:text-[55px] text-black bg-clip-text bg-gradient-to-r from-primary to-purple-600">
           Security & Compliance
         </span>
       </h2>
-      <p className="text-gray-600 text-lg leading-relaxed max-w-xl">
-      Our platform delivers end-to-end visibility across your entire infrastructure—helping you detect risks, uncover vulnerabilities, monitor threats in real time, and ensure continuous compliance with frameworks like CIS, SOC 2, MAS-TRM, PCI-DSS, RBI, ISO 27001:2013, HIPAA etc
-. Whether you're managing cloud, container, or on-prem environments, we provide the insights and controls you need to stay secure and audit-ready from the start.
+      <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
+        Our platform delivers end-to-end visibility across your entire infrastructure—helping you detect risks, uncover vulnerabilities, monitor threats in real time, and ensure continuous compliance with frameworks like CIS, SOC 2, MAS-TRM, PCI-DSS, RBI, ISO 27001:2013, HIPAA, etc. Whether you're managing cloud, container, or on-prem environments, we provide the insights and controls you need to stay secure and audit-ready from the start.
       </p>
     </div>
 
     {/* Right Features List */}
     <div className="flex-1 w-full">
-      <div className="grid sm:grid-cols-1 gap-6 px-8">
+      <div className="grid grid-cols-1  gap-6">
         {[
-  {
-    icon: <ShieldCheck className="w-6 h-6 text-primary" />,
-    title: "Security Findings",
-    desc: "Detect regulatory-based misconfigurations in your infrastructure."
-  },
-  {
-    icon: <Bug className="w-6 h-6 text-primary" />,
-    title: "Vulnerability Detection",
-    desc: "Spot OS, container, and app vulnerabilities using NVD data."
-  },
-  {
-    icon: <Activity className="w-6 h-6 text-primary" />,
-    title: "Threat Monitoring",
-    desc: "Track malicious IPs and abnormal traffic patterns in real time."
-  },
-  {
-    icon: <CheckCircle className="w-6 h-6 text-primary" />,
-    title: "Day 1 Compliance",
-    desc: "Achieve CIS, SOC 2, and MAS compliance from the start."
-  }
-].map((item, idx) => (
+          {
+            icon: <ShieldCheck className="w-6 h-6 text-primary" />,
+            title: "Security Findings",
+            desc: "Detect regulatory-based misconfigurations in your infrastructure.",
+          },
+          {
+            icon: <Bug className="w-6 h-6 text-primary" />,
+            title: "Vulnerability Detection",
+            desc: "Spot OS, container, and app vulnerabilities using NVD data.",
+          },
+          {
+            icon: <Activity className="w-6 h-6 text-primary" />,
+            title: "Threat Monitoring",
+            desc: "Track malicious IPs and abnormal traffic patterns in real time.",
+          },
+          {
+            icon: <CheckCircle className="w-6 h-6 text-primary" />,
+            title: "Day 1 Compliance",
+            desc: "Achieve CIS, SOC 2, and MAS compliance from the start.",
+          },
+        ].map((item, idx) => (
           <div
             key={idx}
             className="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
@@ -116,6 +124,8 @@ const PlatformOverview: React.FC = () => {
 
   </div>
 </section>
+
+
 {/* Workflow Automation */}
 <section className="bg-gray-50 py-16">
   <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center gap-12">
@@ -125,7 +135,7 @@ const PlatformOverview: React.FC = () => {
    
 <div className="flex-1">
       <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-        <span className="font-Grotesk text-[55px] text-black_ bg-clip-text bg-gradient-to-r from-primary to-purple-600">
+        <span className="font-Grotesk text-[36px] sm:text-[48px] md:text-[55px] text-black_ bg-clip-text bg-gradient-to-r from-primary to-purple-600">
            Workflow Automation 
         </span>
       </h2>
@@ -133,7 +143,7 @@ const PlatformOverview: React.FC = () => {
     </div>
     {/* Right Features List */}
       <div className="flex-1 w-full">
-      <div className="grid sm:grid-cols-1 gap-6 px-8">
+      <div className="grid sm:grid-cols-1 gap-6 ">
         {[
   {
     icon: <MonitorCog className="w-6 h-6 text-primary" />,
@@ -188,7 +198,7 @@ const PlatformOverview: React.FC = () => {
    
 <div className="flex-1">
       <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-        <span className="font-Grotesk text-[55px] text-black_ bg-clip-text bg-gradient-to-r from-primary to-purple-600">
+        <span className="font-Grotesk font-Grotesk text-[36px] sm:text-[48px] md:text-[55px]  text-black_ bg-clip-text bg-gradient-to-r from-primary to-purple-600">
            AI-Driven Automation in ClouSec
         </span>
       </h2>
@@ -201,7 +211,7 @@ const PlatformOverview: React.FC = () => {
     </div>
     {/* Right Features List */}
       <div className="flex-1 w-full">
-      <div className="grid sm:grid-cols-1 gap-6 px-8">
+      <div className="grid sm:grid-cols-1 gap-6 ">
         {[
   {
     icon: <Workflow className="w-6 h-6 text-primary" />,

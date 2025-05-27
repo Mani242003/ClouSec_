@@ -91,8 +91,8 @@ export default function ClouSecPlatform() {
            Unifying Cloud Security, Simplifying Your Life.
 
         </h1>
-        <p className="text-lg font-medium max-w-2xl mx-auto">
-         All ClouSec plans come with full access to every platform capability – no upcharges, no limitations.
+        <p className="text-[15px] font-medium max-w-2xl mx-auto">
+         All ClouSec plans come with full access to every platform capability <br/>no upcharges, no limitations.
         </p>
       </div>
 

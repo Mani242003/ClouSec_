@@ -66,9 +66,9 @@ router.post('/', isAdmin, async (req, res) => {
       return res.status(400).json({ error: 'Image is required' });
     }
     
-    if (!pdfUrl) {
-      return res.status(400).json({ error: 'PDF document is required' });
-    }
+    // if (!pdfUrl) {
+    //   return res.status(400).json({ error: 'PDF document is required' });
+    // }
     
     const result = await db.query(
       `INSERT INTO case_studies (

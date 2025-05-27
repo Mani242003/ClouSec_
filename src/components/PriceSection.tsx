@@ -72,7 +72,7 @@ export default function PricingSection() {
               <div>
                 <h3 className="text-2xl font-semibold text-gray-800">{plan.name}</h3>
                 <p className="mt-2 text-gray-500">{plan.highlight}</p>
-                <p className="mt-4 text-3xl font-bold text-indigo-600">{plan.price}</p>
+                {/* <p className="mt-4 text-3xl font-bold text-indigo-600">{plan.price}</p> */}
 
                 <ul className="mt-6 space-y-3">
                   {plan.features.map((feature, index) => (

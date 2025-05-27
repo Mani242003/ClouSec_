@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import {  FaLinkedin } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import Footer from "@/components/Layout/Footer";
 
@@ -272,14 +272,14 @@ const AboutUs = () => {
   )}
 
                   <div className="flex gap-4 justify-center">
-                    <a
+                    {/* <a
                       href={member.socialLinks.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-500 hover:text-blue-600"
                     >
                       <FaTwitter className="w-6 h-6" />
-                    </a>
+                    </a> */}
                     <a
                       href={member.socialLinks.linkedin}
                       target="_blank"
@@ -288,14 +288,14 @@ const AboutUs = () => {
                     >
                       <FaLinkedin className="w-6 h-6" />
                     </a>
-                    <a
+                    {/* <a
                       href={member.socialLinks.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-800 hover:text-gray-900"
                     >
                       <FaGithub className="w-6 h-6" />
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>

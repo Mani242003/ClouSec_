@@ -9,6 +9,8 @@ import Header from './components/Layout/Header';
 const BookDemo = lazy(() => import('./Pages/BookDemo'));
 
 const AboutUs = lazy(() => import('./Pages/AboutUs'));
+const ContactPage = lazy(() => import('./Pages/ContactPage'));
+
 
 const PlatformOverview = lazy(() => import("./Pages/PlatformOverview"));
 // Lazy-loaded page components for better performance
@@ -61,6 +63,9 @@ const App: React.FC = () => {
             <Route path="/book-demo" element={<BookDemo />} />
             <Route path="/platform-overview" element={<PlatformOverview />} />
             <Route path="/about-us" element={<AboutUs/>} />
+            <Route path="/about-us" element={<AboutUs/>} />
+            <Route path="/contact-us" element={<ContactPage />} />
+        
             
             {/* Protected admin routes */}
             <Route path="/admin/dashboard" element={

@@ -12,19 +12,21 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="w-full bg-white py-10 px-6 flex  items-center justify-center ">
+    <div className="w-full bg-white py-10 px-4 sm:px-6 lg:px-20 flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className=" w-full flex items-center justify-center gap-6  px-6 py-4 "
+        className="w-full max-w-4xl flex flex-col sm:flex-row items-center sm:justify-between gap-6 px-4 py-4"
       >
-        <div className="flex items-center justify-center gap-2">
-          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white  p-2 rounded-lg text-white">
-            <IoMdMail className="w-10 h-10" />
+        <div className="flex items-center gap-3 justify-center sm:justify-start w-full sm:w-auto">
+          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-2 rounded-lg">
+            <IoMdMail className="w-8 h-8 sm:w-10 sm:h-10" />
           </div>
-          <span className="font-bold text-xl lg:text-[35px] text-black_">Newsletter</span>
+          <span className="font-bold text-2xl sm:text-4xl text-black_">
+            Newsletter
+          </span>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
           <label htmlFor="email" className="sr-only">
             Email Address
           </label>
@@ -33,19 +35,14 @@ const Newsletter = () => {
             type="email"
             placeholder="Email Address*"
             required
-            className="px-3 py-2 border border-primary2 rounded-md outline-none  "
+            className="w-full sm:w-auto flex-grow px-3 py-2 border border-primary2 rounded-md outline-none"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button
-            type="submit"
-            className="bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition ml-6 "
-          >
-              <GradientLinkButton className="w-[200px]"  path="/">
-                  Subscribe Now
-                        </GradientLinkButton>
-          </button>
-         
+       
+            <GradientLinkButton path="/" className="w-full sm:w-[200px]">
+              Subscribe Now
+            </GradientLinkButton>
         </div>
       </form>
     </div>

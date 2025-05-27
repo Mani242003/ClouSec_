@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
         <Popup show={isPopupVisible} onClose={closePopup} />
       )}
           
-      <div className="">
+      <div className=" w-full">
         {/* Hero Section */}
         <Hero />
         <Services />

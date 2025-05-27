@@ -161,7 +161,7 @@ const handleClose = () => {
           {/* Logo */}
         <div>
             <Link to="/" className="text-2xl font-bold text-blue-600">
-            <img alt="logo" src="./logo.png" className="w-[170px]" />
+            <img alt="logo" src="./logo.png" className="w-[220px]" />
           </Link>
         </div>
 
@@ -227,15 +227,11 @@ const handleClose = () => {
                         </li>
                         <div className="flex flex-col gap-2 p-3">
                           <ListItem href="/" title="Architecture	Diagram">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quam, maiores facilis a placeat mollitia neque obcaecati, error illum sequi tenetur, ullam cumque sit odit ea vel adipisci quia nemo!
-                          </ListItem>
+The ClouSec architecture is designed for robust cloud security, featuring modular components that handle threat detection, identity management, encryption, and compliance. Our diagram highlights secure data flows, multi-cloud integrations, and real-time monitoring capabilities—ensuring your cloud infrastructure remains resilient and protected.                          </ListItem>
                           <ListItem href="/documentation" title="Documentation">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quam, maiores facilis a placeat mollitia neque obcaecati, error illum sequi tenetur, ullam cumque sit odit ea vel adipisci quia nemo!
-
+ClouSec provides detailed documentation to help developers, DevOps, and security teams integrate and utilize our platform seamlessly. From API references and SDKs to setup guides and best practices, our docs empower you to implement end-to-end security in your cloud environments.
                           </ListItem>
-                          <ListItem href="/#pricing" title="Pricing">
-                            Styles for headings, paragraphs, lists...etc
-                          </ListItem>
+                       
                         </div>
                       </ul>
                     </NavigationMenuContent>
@@ -245,16 +241,14 @@ const handleClose = () => {
                     <NavigationMenuContent className="bg-white text-black">
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[400px] md:grid-cols-1 lg:w-[500px] ">
                         <ListItem href="/about-us" title="About	Us">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quam, maiores facilis a placeat mollitia neque obcaecati, error illum sequi tenetur, ullam cumque sit odit ea vel adipisci quia nemo!
-
+At ClouSec, we are dedicated to securing the future of cloud computing. Our mission is to provide businesses with powerful, scalable, and intelligent cloud security solutions that adapt to evolving threats. With a team of cybersecurity experts and a commitment to innovation, we help organizations protect their data, maintain compliance, and operate with confidence in the cloud.
                         </ListItem>
                         {/* <ListItem href="/docs" title="Team">
                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quam, maiores facilis a placeat mollitia neque obcaecati, error illum sequi tenetur, ullam cumque sit odit ea vel adipisci quia nemo!
 
                         </ListItem> */}
-                        <ListItem href="/" title="Contact	Us">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quam, maiores facilis a placeat mollitia neque obcaecati, error illum sequi tenetur, ullam cumque sit odit ea vel adipisci quia nemo!
-
+                        <ListItem href="/contact-us" title="Contact	Us">
+Have questions or need support? We're here to help.
                         </ListItem>
                       </ul>
                     </NavigationMenuContent>
@@ -267,16 +261,15 @@ const handleClose = () => {
                      
                         <div className="flex flex-col gap-2 p-0">
                           <ListItem href="/case-studies" title="Case	Studies">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quam, maiores facilis a placeat mollitia neque obcaecati, error illum sequi tenetur, ullam cumque sit odit ea vel adipisci quia nemo!
+Real-world breach analyses showing how ClouSec’s automation and insights could have prevented costly security incidents.
                         </ListItem>
                         <ListItem href="/" title="Videos">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quam, maiores facilis a placeat mollitia neque obcaecati, error illum sequi tenetur, ullam cumque sit odit ea vel adipisci quia nemo!
+On-demand demos, tutorials, and deep dives that showcase ClouSec’s features and best practices in action.
 
                           {/* /  Re-usable components built using Radix UI and Tailwind CSS. */}
                         </ListItem>
                         <ListItem href="/blogs" title="Blog">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quam, maiores facilis a placeat mollitia neque obcaecati, error illum sequi tenetur, ullam cumque sit odit ea vel adipisci quia nemo!
-
+Expert articles, industry insights, and actionable tips to help you stay ahead of emerging cloud security trends.
                           {/* Re-usable components built using Radix UI and Tailwind CSS. */}
                         </ListItem>
                         </div>
@@ -343,7 +336,7 @@ const handleClose = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-gray-200">
+          <nav className="md:hidden py-4  absolute z-[50] bg-white w-[50%] right-0 top-[50px] p-4 flex flex-col gap-2 h-[100vh] overflow-y-auto shadow-lg">
             <Link
               to="/"
               className="block py-2 text-gray-700 hover:text-blue-600 transition duration-300"
