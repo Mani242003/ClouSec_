@@ -26,6 +26,8 @@ const CaseStudyForm = lazy(() => import('./components/CaseStudy/SimpleCaseStudyF
 const NotFoundPage = lazy(() => import('./Pages/NotFoundPage'));
 const PdfViewer = lazy(() => import('./components/Shared/PdfViewer'));
 const Documentation = lazy(() => import('./Pages/Documentation'));
+const PartnerPage = lazy(() => import('./Pages/PartnerPage'));
+
 
 // Protected route component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -65,6 +67,8 @@ const App: React.FC = () => {
             <Route path="/about-us" element={<AboutUs/>} />
             <Route path="/about-us" element={<AboutUs/>} />
             <Route path="/contact-us" element={<ContactPage />} />
+            <Route path="/partners" element={<PartnerPage />} />
+
         
             
             {/* Protected admin routes */}

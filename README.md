@@ -23,6 +23,21 @@ This project implements a website for ClouSec with blog and case studies compone
   - Shows the Case Studies component with pagination, displaying 6 cards per page
   - Same card layout as on the home page
 
+### Contact Form with Email Functionality
+
+- **Contact Page (http://localhost:5173/contact/)**
+  - Displays a contact form with the following fields:
+    - First Name (required)
+    - Last Name
+    - Business Email (required)
+    - Company (required)
+    - Job Title
+    - Phone
+    - Country
+    - Message (required)
+  - Form submission sends an email with all the provided information
+  - Shows success/error messages after submission
+
 ### Pagination Behavior
 
 - Users can navigate through pages of content
@@ -42,6 +57,8 @@ The implementation includes:
 2. **BlogCard and CaseStudyCard Components**: Reusable card components for displaying blog and case study previews
 3. **BlogList and CaseStudyList Components**: Components that fetch and display the content with pagination
 4. **Route-aware Display**: Components detect which route they're on and adjust the number of items per page accordingly
+5. **ContactForm Component**: Handles form submission and email sending functionality
+6. **Email Service**: Backend service for processing and sending emails
 
 ## Getting Started
 
@@ -55,3 +72,13 @@ The implementation includes:
 The components fetch data from the backend API at http://localhost:3000 with the following endpoints:
 - `/api/blogs` - Get all blog posts
 - `/api/case-studies` - Get all case studies
+- `/api/send-email` - Send contact form data via email
+
+## Backend Setup for Email Functionality
+
+To enable the email functionality:
+
+1. Navigate to the server directory: `cd server`
+2. Install server dependencies: `npm install`
+3. Configure your SMTP settings in `emailHandler.js`
+4. Start the server: `node emailHandler.js`

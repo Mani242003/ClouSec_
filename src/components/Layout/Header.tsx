@@ -11,9 +11,10 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "../../components/ui/navigation-menu"
-import AspectRatioBox from '../AspectRatioBox';
+// import AspectRatioBox from '../AspectRatioBox';
 import GradientLinkButton from '../common/GradientLinkButtonProps';
 import ListItem from '../common/ListItem';
+import { Headset } from 'lucide-react';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -202,11 +203,12 @@ const handleClose = () => {
                               className="flex flex-col h-full w-full select-none rounded-md p-6 no-underline outline-none focus:shadow-md bg-bg_light"
 
                             >
-                              <span className="text-black_ text-[22px] font-bold">See ClouSec in action</span>
+                              <span className="text-black_ text-[22px] font-bold">ClouSec </span>
 
-                              <span className="text-gray_ text-[15px] py-2 pb-3"> One platform to secure your apps and data in the cloud.</span>
+                              <span className="text-gray_ text-[15px] py-2 pb-3"> ClouSec is a PaaS-based AI-driven Cloud Infrastructure Entitlement Management (CIEM) tool with Cloud Center of Excellence (CCoE) features. 
+</span>
 
-                              <AspectRatioBox ratio="">
+                              {/* <AspectRatioBox ratio="">
 
                                 <img
                                   src="/banner.jpg"
@@ -215,10 +217,10 @@ const handleClose = () => {
                                     objectFit: 'cover',
                                   }}
                                 />
-                              </AspectRatioBox>
+                              </AspectRatioBox> */}
 
 
-                              <GradientLinkButton className="mt-[9.5rem]" path="/book-demo">
+                              <GradientLinkButton className="mt-[3.5rem]" path="/book-demo">
                                 Get a Demo
                               </GradientLinkButton>
 
@@ -226,11 +228,16 @@ const handleClose = () => {
                           </NavigationMenuLink>
                         </li>
                         <div className="flex flex-col gap-2 p-3">
-                          <ListItem href="/" title="Architecture	Diagram">
-The ClouSec architecture is designed for robust cloud security, featuring modular components that handle threat detection, identity management, encryption, and compliance. Our diagram highlights secure data flows, multi-cloud integrations, and real-time monitoring capabilities—ensuring your cloud infrastructure remains resilient and protected.                          </ListItem>
+                          {/* <ListItem href="/" title="Architecture	Diagram">
+The ClouSec architecture is designed for robust cloud security, featuring modular components that handle threat detection, identity management, encryption, and compliance. Our diagram highlights secure data flows, multi-cloud integrations, and real-time monitoring capabilities—ensuring your cloud infrastructure remains resilient and protected.                          </ListItem> */}
                           <ListItem href="/documentation" title="Documentation">
-ClouSec provides detailed documentation to help developers, DevOps, and security teams integrate and utilize our platform seamlessly. From API references and SDKs to setup guides and best practices, our docs empower you to implement end-to-end security in your cloud environments.
+Explore our comprehensive library of resources to get the most out of ClouSec. 
+
+
                           </ListItem>
+                           <ListItem href="/platform-overview" title="Platform Overview">
+Streamline cloud security and compliance with ClouSec, the intelligent RegTech platform designed for modern businesses.
+                         </ListItem>
                        
                         </div>
                       </ul>
@@ -276,7 +283,7 @@ Expert articles, industry insights, and actionable tips to help you stay ahead o
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
-                   <Link className="ml-3 mr-6 font-semi-bolder text-[15px]" to="/" >Partners</Link>
+                   <Link className="ml-3 mr-6 font-semi-bolder text-[15px]" to="/partners" >Partners</Link>
 
                   {/* <Link className="ml-3 mr-6 font-semi-bolder text-[15px]" to="/lab" /> */}
                   {/* <Link lable="Join Now" path="/mani" /> */}
@@ -284,15 +291,20 @@ Expert articles, industry insights, and actionable tips to help you stay ahead o
 
                 </NavigationMenuList>
               </NavigationMenu>
-              <div className=" hidden lg:flex ">
-                {/* <Link label="Sign In" path="/lab" /> */}
-                {/* <NavigationMenuTrigger>Getting started</NavigationMenuTrigger> */}
-                <GradientLinkButton  icon='false' path="/book-demo">
-                  Get	Secure
-                  with	ClouSec
-                </GradientLinkButton>
+              <div className="hidden lg:flex items-center space-x-4">
+  {/* <Link label="Sign In" path="/lab" /> */}
+  {/* <NavigationMenuTrigger>Getting started</NavigationMenuTrigger> */}
 
-              </div>
+  <Link to="/contact-us" className="flex items-center gap-1 hover:underline">
+    <Headset className="w-4 h-4" />
+    Support
+  </Link>
+
+  <GradientLinkButton icon="false" path="/book-demo">
+    Get Secure
+    with ClouSec
+  </GradientLinkButton>
+</div>
             </div>
                 )}
 
@@ -345,25 +357,55 @@ Expert articles, industry insights, and actionable tips to help you stay ahead o
               Home
             </Link>
             <Link
-              to="/blogs"
+              to="/documentation"
               className="block py-2 text-gray-700 hover:text-blue-600 transition duration-300"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Blog
+             Documentation
             </Link>
             <Link
+              to="/platform-overview"
+              className="block py-2 text-gray-700 hover:text-blue-600 transition duration-300"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Platform Overview
+            </Link>
+            <Link
+              to="/partners"
+              className="block py-2 text-gray-700 hover:text-blue-600 transition duration-300"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Partners
+            </Link>
+             <Link
               to="/case-studies"
               className="block py-2 text-gray-700 hover:text-blue-600 transition duration-300"
               onClick={() => setMobileMenuOpen(false)}
             >
               Case Studies
             </Link>
-            <Link
-              to="/documentation"
+             <Link
+              to="/blogs"
               className="block py-2 text-gray-700 hover:text-blue-600 transition duration-300"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Documentation
+              Blogs
+            </Link>
+            
+            <Link
+              to="/about-us"
+              className="block py-2 text-gray-700 hover:text-blue-600 transition duration-300"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About Us
+            </Link>
+            
+             <Link
+              to="/contact-us"
+              className="block py-2 text-gray-700 hover:text-blue-600 transition duration-300"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact Us
             </Link>
 
             {isAdmin ? (
@@ -383,13 +425,14 @@ Expert articles, industry insights, and actionable tips to help you stay ahead o
                 </button>
               </>
             ) : (
-              <Link
-                to="/login"
-                className="block py-2 text-gray-700 hover:text-blue-600 transition duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Admin Login
-              </Link>
+              // <Link
+              //   to="/login"
+              //   className="block py-2 text-gray-700 hover:text-blue-600 transition duration-300"
+              //   onClick={() => setMobileMenuOpen(false)}
+              // >
+              //   Admin Login
+              // </Link>
+              <></>
             )}
           </nav>
         )}

@@ -1,10 +1,10 @@
 import React from "react";
-// import ContactForm from "./ContactForm";
-// import { IoLocation } from "react-icons/io5";
-// import { FaPhoneVolume } from "react-icons/fa6";
-// import { IoMailSharp } from "react-icons/io5";
-// import { TbWorld } from "react-icons/tb";
-// import { FaLinkedin } from "react-icons/fa";
+import ContactForm from "./ContactForm";
+import { IoLocation } from "react-icons/io5";
+import { FaPhoneVolume } from "react-icons/fa6";
+import { IoMailSharp } from "react-icons/io5";
+import { TbWorld } from "react-icons/tb";
+import { FaLinkedin } from "react-icons/fa";
 
 
 const ContactUs: React.FC = () => {
@@ -12,7 +12,7 @@ const ContactUs: React.FC = () => {
     <>
       <span id="contact-us"></span>
 
-      {/* <div className="w-full bg-gray-50">
+      <div className="w-full bg-gray-50">
         <div className="w-full pt-[65px] sm:pt-[85px]">
           <section className="container px-4 md:px-6 py-12">
             <div className="text-center mb-10" data-aos="fade-up">
@@ -138,7 +138,7 @@ const ContactUs: React.FC = () => {
             </div>
           </section>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

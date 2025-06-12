@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-import OptimizedImage from "../OptimizedImage";
-import AspectRatioBox from "../AspectRatioBox";
+// import OptimizedImage from "../OptimizedImage";
+// import AspectRatioBox from "../AspectRatioBox";
 
 interface TabListItem {
   title: string;
@@ -387,7 +387,7 @@ const ClouSecOverview: React.FC = () => {
       </div>
 
       {/* Nested Content Tabs */}
-    <div  className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white  px-2 sm:pl-4 rounded-[0px] sm:rounded-[10px] shadow-md m-0 sm:m-6">
+    <div  className="   m-0 sm:m-6 ">
         <div className="flex flex-wrap gap-2 mb-0 sm:mb-6  ">
         {currentTabs.map((tab, idx) => (
           <button
@@ -397,10 +397,10 @@ const ClouSecOverview: React.FC = () => {
               setOpenIndex(null);
               contentRef.current?.scrollIntoView({ behavior: "smooth" });
             }}
-            className={`p-3 sm:p-6 rounded-md text-sm font-medium text-start ${
+            className={`ml-3 sm:ml-0 p-2 sm:p-3 rounded-[10px] text-sm font-medium text-start ${
               activeTab === idx
-               ? "border-b-2 border-white text-white"
-                : ""
+               ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white"
+                : "bg-gray-100"
             }`}
           >
             {tab.title}
@@ -411,10 +411,10 @@ const ClouSecOverview: React.FC = () => {
       {/* Active Tab Content */}
       <div
        
-        className="flex flex-col lg:flex-row gap-0 sm:gap-6 rounded-xl shadow-sm p-4 sm:p-6"
+        className="flex flex-col bg-primary lg:flex-row    text-gray-700   "
       >
-        <div className="w-full lg:w-1/2 flex items-center justify-center ">
-          <AspectRatioBox ratio="4:3">
+        <div className="w-full lg:w-[60%]  h-full flex items-center justify-center p-4">
+          {/* <AspectRatioBox ratio="4:3">
             <OptimizedImage
               src={currentContent.img}
               alt={currentContent.title}
@@ -422,10 +422,11 @@ const ClouSecOverview: React.FC = () => {
               height={450}
               className="rounded-lg shadow-none"
             />
-          </AspectRatioBox>
+          </AspectRatioBox> */}
+          <img src={currentContent.img} alt={currentContent.title} />
         </div>
 
-        <div className="w-full lg:w-1/2 space-y-6">
+        <div className="w-full lg:w-[40%] h-full pr-2 p-4 sm:p-0 ">
           <div>
             <span className="uppercase  text-sm font-semibold">
               Challenge

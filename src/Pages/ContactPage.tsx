@@ -2,7 +2,7 @@ import React from 'react';
 import { Mail, Phone, MapPin, Globe, Linkedin } from 'lucide-react';
 import Footer from '@/components/Layout/Footer';
 import a from "/bg1.jpg";
-import DemoForm from '@/components/DemoForm'; // Or your custom ContactForm
+import ContactForm from '@/components/ContactForm';
 
 const ContactPage: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ const ContactPage: React.FC = () => {
               Get in Touch
             </h2>
             <p className="text-lg max-w-3xl mx-auto">
-              We’d love to hear from you
+              We'd love to hear from you
             </p>
           </div>
         </div>
@@ -90,7 +90,7 @@ const ContactPage: React.FC = () => {
         {/* Right Side: Contact Form */}
         <div className="w-full lg:w-1/2 bg-gray-50 p-8 rounded-3xl shadow-xl">
           <h2 className="text-2xl font-semibold mb-6 text-gray-800">Send us a Message</h2>
-          <DemoForm /> {/* Replace with your form component */}
+          <ContactForm />
         </div>
       </main>
 

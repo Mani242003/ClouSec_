@@ -69,7 +69,7 @@ const Services: React.FC = () => {
   return (
     <>
       <span id="features"></span>
-      <div className="bg-white-100 py-12 sm:grid sm:place-items-center overflow-hidden ">
+      <div className="bg-primary py-12 sm:grid sm:place-items-center overflow-hidden ">
         <div className="container">
           {/* Header */}
           <div className="pb-12 text-center space-y-3">

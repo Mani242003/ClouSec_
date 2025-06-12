@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
 </div>
 
                 <p className="text-white_ text-[15px] sm:text-[17px]  leading-[25px] ">
-                 ClouSec is an intelligent RegTech platform that unifies SIEM, CIEM, and CCoE to secure cloud infrastructures at any scale. It automates regulatory compliance, streamlines cloud security with AI-driven insights and optimizes cloud operations to reduce monthly costs
+                 ClouSec is an intelligent RegTech platform that unifies CNAPP, CIEM, and CCoE to secure cloud infrastructures at any scale. It automates regulatory compliance, streamlines cloud security with AI-driven insights and optimizes cloud operations to reduce monthly costs
                 </p>
                 
                 <div className=" w- flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-6 ">
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
               </div>
 
               <div
-                className='  absolute  flex flex-1 h-full w-[80%] right-[-400px] mt-11 hidden lg:block '
+                className='  absolute  flex flex-1 h-full  lg:w-[50%]  right-[-100px] mt-11 hidden lg:block '
               >
                 <div className="  w-full h-full pl-[10px] ">
 

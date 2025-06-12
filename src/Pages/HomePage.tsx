@@ -14,6 +14,8 @@ const ClouSecOverview = lazy(() => import("../components/common/ClouSecOverview"
 const PricingSection = lazy(() => import("../components/PriceSection"));
 const ClouSecPlatform = lazy(() => import("../components/ClouSecPlatform"));
 const Popup = lazy(() => import('@/components/Popup/Popup'));
+const VideoContentSlider = lazy(() => import('@/components/VideoContentSlider'));
+
 
 const HomePage: React.FC = () => {
 
@@ -83,6 +85,8 @@ const HomePage: React.FC = () => {
         <PricingSection />
         <ClouSecPlatform />
         {/* Latest Blog Posts Section */}
+          <VideoContentSlider />
+
         <section className="">
        
 
@@ -112,6 +116,7 @@ We give actionable tips, strategies, and techniques to grow your business.
 
           <BlogList isVisible={false} />
         </section>
+
 
       <Newsletter />
        

@@ -264,7 +264,7 @@ const SimpleCaseStudyForm: React.FC = () => {
         {/* PDF Upload Field */}
         <div className="mb-6">
           <label className="block text-gray-700 font-medium mb-2">
-            PDF Document 
+            PDF Document <span className="text-red-500">*</span>
           </label>
           
           <div className="flex items-center space-x-4">
