@@ -61,7 +61,7 @@ const App: React.FC = () => {
             <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
             <Route path="/view-pdf" element={<PdfViewer />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/documentation" element={<Documentation />} />
+            <Route path="/documentation" element={<HomePage />} />
             <Route path="/book-demo" element={<BookDemo />} />
             <Route path="/platform-overview" element={<PlatformOverview />} />
             <Route path="/about-us" element={<AboutUs/>} />
@@ -108,3 +108,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
