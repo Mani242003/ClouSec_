@@ -1,6 +1,5 @@
 // src/components/ContactForm.tsx
 import React, { useState } from "react";
-import { sendContactEmail } from "../api/emailService";
 
 interface FormData {
   firstName: string;
@@ -42,18 +41,37 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
+    const formData = new FormData();
+    formData.append("access_key", "cc9aada6-93e2-4928-8622-12437522d071"); // ✅ Replace with your real key
+
+    // Map form fields to Web3Forms fields
+    formData.append("First Name", form.firstName);
+    formData.append("Last Name", form.lastName);
+    formData.append("Email", form.email);
+    formData.append("Company", form.company);
+    formData.append("Job Title", form.jobTitle);
+    formData.append("Phone", form.phone);
+    formData.append("Country", form.country);
+    formData.append("Message", form.message);
+
+    // Optional fields
+    formData.append("subject", "New ClouSec Contact Form Submission");
+    formData.append("from_name", "Contact Form");
+
     try {
-      // Send email using the email service
-      const result = await sendContactEmail(form);
-      
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
       if (result.success) {
-        // Success message
         setSubmitStatus({
           type: "success",
-          message: result.message,
+          message: "Thank you! Your message has been sent.",
         });
-        
-        // Reset form
+
+        // Clear form
         setForm({
           firstName: "",
           lastName: "",
@@ -65,17 +83,16 @@ const ContactForm: React.FC = () => {
           message: "",
         });
       } else {
-        // Error message
         setSubmitStatus({
           type: "error",
-          message: result.message,
+          message: result.message || "Submission failed. Please try again.",
         });
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Web3Forms error:", error);
       setSubmitStatus({
         type: "error",
-        message: "There was an error sending your message. Please try again.",
+        message: "There was an error submitting the form. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -89,7 +106,6 @@ const ContactForm: React.FC = () => {
     const year = now.getFullYear();
     const hours = String(now.getHours()).padStart(2, "0");
     const minutes = String(now.getMinutes()).padStart(2, "0");
-    
     return `${month}/${day}/${year} ${hours}:${minutes}`;
   };
 
@@ -116,11 +132,12 @@ const ContactForm: React.FC = () => {
             id="firstName"
             name="firstName"
             required
-            onChange={handleChange}
             value={form.firstName}
-            className="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded"
           />
         </div>
+
         <div>
           <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
             Last Name
@@ -128,9 +145,9 @@ const ContactForm: React.FC = () => {
           <input
             id="lastName"
             name="lastName"
-            onChange={handleChange}
             value={form.lastName}
-            className="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded"
           />
         </div>
       </div>
@@ -144,9 +161,9 @@ const ContactForm: React.FC = () => {
           name="email"
           type="email"
           required
-          onChange={handleChange}
           value={form.email}
-          className="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2 rounded"
         />
       </div>
 
@@ -158,9 +175,9 @@ const ContactForm: React.FC = () => {
           id="company"
           name="company"
           required
-          onChange={handleChange}
           value={form.company}
-          className="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2 rounded"
         />
       </div>
 
@@ -171,9 +188,9 @@ const ContactForm: React.FC = () => {
         <input
           id="jobTitle"
           name="jobTitle"
-          onChange={handleChange}
           value={form.jobTitle}
-          className="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2 rounded"
         />
       </div>
 
@@ -184,9 +201,9 @@ const ContactForm: React.FC = () => {
         <input
           id="phone"
           name="phone"
-          onChange={handleChange}
           value={form.phone}
-          className="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2 rounded"
         />
       </div>
 
@@ -197,9 +214,9 @@ const ContactForm: React.FC = () => {
         <input
           id="country"
           name="country"
-          onChange={handleChange}
           value={form.country}
-          className="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2 rounded"
         />
       </div>
 
@@ -212,9 +229,9 @@ const ContactForm: React.FC = () => {
           name="message"
           required
           rows={4}
-          onChange={handleChange}
           value={form.message}
-          className="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2 rounded"
         ></textarea>
       </div>
 

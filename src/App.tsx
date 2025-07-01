@@ -25,7 +25,7 @@ const BlogForm = lazy(() => import('./components/Blog/BlogForm'));
 const CaseStudyForm = lazy(() => import('./components/CaseStudy/SimpleCaseStudyForm'));
 const NotFoundPage = lazy(() => import('./Pages/NotFoundPage'));
 const PdfViewer = lazy(() => import('./components/Shared/PdfViewer'));
-const Documentation = lazy(() => import('./Pages/Documentation'));
+// const Documentation = lazy(() => import('./Pages/Documentation'));
 const PartnerPage = lazy(() => import('./Pages/PartnerPage'));
 
 

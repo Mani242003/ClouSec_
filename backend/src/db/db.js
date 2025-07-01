@@ -1,6 +1,6 @@
 const { Pool } = require('pg');
-require('dotenv').config();
-
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
@@ -8,6 +8,8 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
 });
+
+console.log(`Connecting to database ${process.env.DB_DATABASE} at ${process.env.DB_HOST}:${process.env.DB_PORT} as user ${process.env.DB_USER}`);
 
 // Initialize database tables if they don't exist
 const initDb = async () => {
