@@ -28,8 +28,8 @@ const CardContent: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 const slides = [
   {
     id: 1,
-    videoUrl: "https://www.youtube.com/embed/5HqhYLZSogA",
-    title: "Minimize Your Attack Surface",
+    videoUrl: "https://www.youtube.com/embed/M0sBlb7t1oA?si=gkjyzH54ag9sHyqY",
+    title: "ClouSec : Why Vulnerability Management is important ?",
     
     content: [
       "Identify and prioritize vulnerabilities in your cloud infrastructure.",
@@ -38,6 +38,21 @@ const slides = [
       "Reduce your risk of exploitation with a proactive security approach."
        
     ],
+  },
+   {
+    id: 2,
+    videoUrl: "https://www.youtube.com/embed/2CkyH9DhkTc?si=Zz6NtSuN9RUmM5d8",
+    title: "ClouSec Compliance Suite : Ensuring Regulatory Compliance",
+    
+
+   content: [
+  "Event-Driven Scanning unlike other vendors.",
+  "Efficient Rules & Severity Mapping.",
+  "Actionable Findings with Built-In Remediations.",
+  "Proven Enhanced Controls vs. AWS Security Hub.",
+  "Customizable Compliance Dashboards."
+],
+
   },
   // Add more slides if needed
 ];
